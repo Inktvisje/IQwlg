@@ -64,7 +64,7 @@ void MainWindow::setMaxLength(int l)
 
 void MainWindow::selectFile()
 {
-    fileName = QFileDialog::getSaveFileName(this, tr("Open File"), huis.absolutePath(), tr("Files (*.*)"));
+    fileName = QFileDialog::getSaveFileName(this, tr("Select Output File"), huis.absolutePath(), tr("Wordlist files (*.*)"));
     qDebug() << "fileName=" << fileName;
     ui->fileNameBox->setText(fileName);
 }
