@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     config.setPath(huis.path()+"/.IQwlg");
     setMinLength(8);
-    setMaxLength(10);
-    setKars("abcdef");
+    setMaxLength(8);
+    setKars("abc123@#$");
 }
 
 MainWindow::~MainWindow()
@@ -50,14 +50,14 @@ void MainWindow::setKars(QString k)
 
 void MainWindow::setMinLength(int l)
 {
-    minLength = l;
+    if(l <= maxLength) {minLength = l;}
     if(ui->minSpin->value() != minLength) {ui->minSpin->setValue(minLength);}
     qDebug() << "minLength = " << minLength;
 }
 
 void MainWindow::setMaxLength(int l)
 {
-    maxLength = l;
+    if(l >= minLength) {maxLength = l;}
     if(ui->maxSpin->value() != maxLength) {ui->maxSpin->setValue(maxLength);}
     qDebug() << "maxLength = " << maxLength;
 }

@@ -34,6 +34,7 @@ void wlg::run()
     }
     wout.flush();
     wfile.close();
+    qDebug() << "Done generating!";
     exit();
 }
 
